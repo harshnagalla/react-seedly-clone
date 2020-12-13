@@ -1,11 +1,5 @@
 const initTopicCollection = require("../db/topics.json");
 
-// boom is library for HTTP-friendly error reporting. It is a dependency of hapi and doesn't need to be installed
-const Boom = require("@hapi/boom");
-
-// joi is for object/schema validation
-const Joi = require("@hapi/joi");
-
 // lowdb is the json database
 const low = require("lowdb");
 
@@ -16,16 +10,12 @@ const MemorySync = require("lowdb/adapters/Memory");
 const db = low(new MemorySync());
 
 // initialize the database with data from json file
-db.defaults({ users: initTopicCollection }).write();
+db.defaults({ topics: initTopicCollection }).write();
 // after any interaction that changes the database, use `write()` to commit changes
-
-// store an id, this is for creating new users, and makes sure we don't assign same id twice
-let uuid = initTopicCollection.length + 1;
-
-
 
 // create and export plugin
 module.exports = {
+  name: "topic-routes",
   register: async function (server) {
     /**
      * list topics route
