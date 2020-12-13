@@ -1,0 +1,70 @@
+[
+  {
+    "topicId": 1,
+    "topicName": "Stock Investing"
+  },
+  {
+    "topicId": 2,
+    "topicName": "Investments"
+  },
+  {
+    "topicId": 3,
+    "topicName": "Savings"
+  },
+  {
+    "topicId": 4,
+    "topicName": "CPF"
+  },
+  {
+    "topicId": 5,
+    "topicName": "Retirement"
+  },
+  {
+    "topicId": 6,
+    "topicName": "Lifestyle"
+  },
+  {
+    "topicId": 7,
+    "topicName": "Fresh Graduate"
+  },
+  {
+    "topicId": 8,
+    "topicName": "Career"
+  },
+  {
+    "topicId": 9,
+    "topicName": "Seedly Student Ambassadors"
+  },
+  {
+    "topicId": 10,
+    "topicName": "Credit Cards"
+  },
+  {
+    "topicId": 11,
+    "topicName": "Robo-advisors"
+  },
+  {
+    "topicId": 12,
+    "topicName": "HDB BTO"
+  },
+  {
+    "topicId": 13,
+    "topicName": "HDB Resale"
+  },
+  {
+    "topicId": 14,
+    "topicName": "Property"
+  },
+  {
+    "topicId": 15,
+    "topicName": "In the News"
+  },
+  {
+    "topicId": 16,
+    "topicName": "Seedly"
+  },
+  {
+    "topicId": 12,
+    "topicName": "HDB BTO"
+  }
+]

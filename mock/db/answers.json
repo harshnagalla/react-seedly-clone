@@ -1,0 +1,37 @@
+[
+  {
+    "userId": 1,
+    "answerId": 1,
+    "questionId": 1,
+    "answer": "For me clarke quay",
+    "timestamp": "Mon Dec 14 2020 01:16:38 GMT+0800 (Singapore Standard Time)"
+  },
+  {
+    "userId": 1,
+    "answerId": 2,
+    "questionId": 1,
+    "answer": "For me clarke quay",
+    "timestamp": "Mon Dec 15 2020 01:16:38 GMT+0800 (Singapore Standard Time)"
+  },
+  {
+    "userId": 6,
+    "answerId": 3,
+    "questionId": 1,
+    "answer": "For me clarke quay",
+    "timestamp": "Mon Dec 11 2020 01:16:38 GMT+0800 (Singapore Standard Time)"
+  },
+  {
+    "userId": 2,
+    "answerId": 4,
+    "questionId": 5,
+    "answer": "For me clarke quay",
+    "timestamp": "Mon Dec 15 2020 01:16:38 GMT+0800 (Singapore Standard Time)"
+  },
+  {
+    "userId": 4,
+    "answerId": 6,
+    "questionId": 1,
+    "answer": "For me clarke quay",
+    "timestamp": "Mon Dec 13 2020 01:16:38 GMT+0800 (Singapore Standard Time)"
+  }
+]
