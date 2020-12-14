@@ -31,12 +31,19 @@
   margin-bottom: 10px;
 }
 
-.questionUserPost__upperSection > label {
+.questionUserPost__filterLabel {
   margin-right: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: rgb(153, 161, 179);
+}
+.questionUserPost__unSelectedLabel {
+  color: rgb(153, 161, 179);
+}
+
+.questionUserPost__selectedLabel {
+  color: rgb(40, 111, 220);
 }
 .questionUserPost__button {
   border-radius: 40px;

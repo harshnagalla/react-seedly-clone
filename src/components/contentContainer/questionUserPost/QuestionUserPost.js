@@ -1,6 +1,7 @@
 import UserPost from "../userPost/UserPost";
 import style from "./QuestionUserPost.module.scss";
-import Reactƒ from "react";
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
 
 import {
   differenceInMinutes,
@@ -8,12 +9,44 @@ import {
   differenceInDays,
 } from "date-fns";
 
+const filterItems = [
+  {
+    filterId: 0,
+    filterName: "Recent Activity",
+  },
+  {
+    filterId: 1,
+    filterName: "Unanswered",
+  },
+];
 const QuestionUserPost = ({ questions }) => {
-  const renderQuestions = questions.map((questionItem) => {
+  const [selectedFilter, setselectedFilter] = useState(filterItems[0]);
+  const [questionToRender, setquestionToRender] = useState(questions);
+
+  useEffect(() => {
+    //Most recent question
+    if (selectedFilter.filterId === 0) {
+      let result = questions.sort(function (a, b) {
+        return new Date(b.timestamp) - new Date(a.timestamp);
+      });
+      setquestionToRender(result);
+    } else {
+      let result = questions.filter(
+        (item) => !(item.answers && item.answers[0])
+      );
+      setquestionToRender(result);
+    }
+  }, [selectedFilter, questions]);
+
+  const renderQuestions = questionToRender.map((questionItem) => {
     let answer;
     let timeString = "";
 
-    if (questionItem.answers[0] && questionItem.answers[0].timestamp) {
+    if (
+      questionItem.answers &&
+      questionItem.answers[0] &&
+      questionItem.answers[0].timestamp
+    ) {
       answer = questionItem.answers[0];
       timeString = getTimeStamp(answer.timestamp);
     }
@@ -29,7 +62,7 @@ const QuestionUserPost = ({ questions }) => {
         <button className={style.questionUserPost__button}>
           {"+ Follow  •  5"}
         </button>
-        {questionItem.answers[0] && (
+        {questionItem.answers && questionItem.answers[0] && (
           <UserPost
             fullName={answer.firstName}
             answer={answer.answer}
@@ -39,11 +72,31 @@ const QuestionUserPost = ({ questions }) => {
       </div>
     );
   });
+
+  const renderFilters = filterItems.map((item) => {
+    let filterLabelStyle =
+      selectedFilter.filterId !== item.filterId
+        ? style.questionUserPost__unSelectedLabel
+        : style.questionUserPost__selectedLabel;
+
+    return (
+      <label
+        key={item.filterId}
+        className={classNames(
+          style.questionUserPost__filterLabel,
+          filterLabelStyle
+        )}
+        onClick={() => setselectedFilter(item)}
+      >
+        {item.filterName}
+      </label>
+    );
+  });
+
   return (
     <div className={style.questionUserPost}>
       <div className={style.questionUserPost__upperSection}>
-        <label>{"Recent Activity"}</label>
-        <label>{"Unanswered"}</label>
+        {renderFilters}
       </div>
       {renderQuestions}
     </div>
