@@ -3,8 +3,8 @@ import style from "./SideNavBar.module.scss";
 
 const SideNavBar = ({ topics, getQuestionsforTopic }) => {
   const onItemClick = useCallback(
-    (topicId) => {
-      getQuestionsforTopic(topicId);
+    (topic) => {
+      getQuestionsforTopic(topic);
     },
     [topics]
   );
@@ -12,7 +12,7 @@ const SideNavBar = ({ topics, getQuestionsforTopic }) => {
     return topics.map((topic) => {
       return (
         <li
-          onClick={() => onItemClick(topic.topicId)}
+          onClick={() => onItemClick(topic)}
           className={style.sideNavBar__topics}
           key={topic.topicId}
         >

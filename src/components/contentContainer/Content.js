@@ -5,21 +5,21 @@ import SideNavBar from "./sideNavBar/SideNavBar";
 import React, { useEffect, useState } from "react";
 import fetch from "isomorphic-unfetch";
 
-const Content = ({ topics }) => {
-  const [selectedTopicId, setSelectedTopicId] = useState(1);
-  const [questions, setQuestions] = useState([]);
+const Content = ({ topics, questions, getQuestionsforTopic }) => {
+  // const [selectedTopicId, setSelectedTopicId] = useState(1);
+  // const [questions, setQuestions] = useState([]);
 
-  useEffect(async () => {
-    const res = await fetch("http://localhost:7000/topic/" + selectedTopicId, {
-      method: "GET",
-    });
-    const json = await res.json();
-    setQuestions(json);
-  }, [selectedTopicId]);
+  // useEffect(async () => {
+  //   const res = await fetch("http://localhost:7000/topic/" + selectedTopicId, {
+  //     method: "GET",
+  //   });
+  //   const json = await res.json();
+  //   setQuestions(json);
+  // }, [selectedTopicId]);
 
-  const getQuestionsforTopic = async (topicId) => {
-    setSelectedTopicId(topicId);
-  };
+  // const getQuestionsforTopic = async (topic) => {
+  //   setSelectedTopicId(topic.topicId);
+  // };
 
   return (
     <div className={style.content}>
