@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import fetch from "isomorphic-unfetch";
 export const Context = React.createContext();
 
-const ContentContainer = ({ topics }) => {
+const ContentContainer = () => {
   const [selectedTopic, setSelectedTopic] = useState({
     topicId: 0,
     topicName: "Let's Talk Finance",
@@ -36,7 +36,6 @@ const ContentContainer = ({ topics }) => {
         buttonText={"Ask Question"}
       />
       <Content
-        topics={topics}
         questions={questions}
         getQuestionsforTopic={getQuestionsforTopic}
       />
