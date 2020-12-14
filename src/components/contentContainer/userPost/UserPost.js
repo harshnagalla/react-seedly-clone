@@ -6,7 +6,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import style from "./UserPost.module.scss";
