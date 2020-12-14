@@ -3,7 +3,6 @@ import PageContainer from "../src/components/pageContainer/PageContainer";
 import fetch from "isomorphic-unfetch";
 
 export default function Home({ topics }) {
-  console.log("initial data", topics);
   return (
     <>
       <Head>

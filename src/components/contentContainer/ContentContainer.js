@@ -7,7 +7,7 @@ export const Context = React.createContext();
 
 const ContentContainer = ({ topics }) => {
   const [selectedTopic, setSelectedTopic] = useState({
-    topicId: 1,
+    topicId: 0,
     topicName: "Let's Talk Finance",
   });
   const [questions, setQuestions] = useState([]);

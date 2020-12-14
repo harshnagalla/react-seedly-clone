@@ -54,15 +54,22 @@ module.exports = {
       handler: (request, h) => {
         // get id from request parameters
         const { id } = request.params;
-    
+
         const answers = db.get("answers").value();
         const users = db.get("users").value();
-        const questions = db
-          .get("questions")
-          .filter({ topicId: parseInt(id, 10) })
-          .value();
 
-        const mapAnserwsToUsers = answers.map((answer) => {
+        let questions;
+
+        if (parseInt(id, 10) === 0) {
+          questions = db.get("questions").value();
+        } else {
+          questions = db
+            .get("questions")
+            .filter({ topicId: parseInt(id, 10) })
+            .value();
+        }
+
+        const mapAnswersToUsers = answers.map((answer) => {
           const user = users.find((item) => {
             if (item.userId === answer.userId) {
               return item;
@@ -81,7 +88,7 @@ module.exports = {
         });
 
         const mapQuestionsToAnswers = questions.map((questionItem) => {
-          const answers = mapAnserwsToUsers.filter((item) => {
+          const answers = mapAnswersToUsers.filter((item) => {
             if (item.questionId === questionItem.questionId) {
               return item;
             }
@@ -99,7 +106,6 @@ module.exports = {
         }
         // I'm using the Boom library to generate the error, this will add the 400 code.
         throw Boom.badRequest(`id ${id} not found`);
-       
       },
     });
   },
