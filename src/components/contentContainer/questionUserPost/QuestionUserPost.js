@@ -2,6 +2,8 @@ import UserPost from "../userPost/UserPost";
 import style from "./QuestionUserPost.module.scss";
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
+import IconButton from "@material-ui/core/IconButton";
+import ShareIcon from "@material-ui/icons/Share";
 
 import {
   differenceInMinutes,
@@ -59,9 +61,22 @@ const QuestionUserPost = ({ questions }) => {
         <p className={style.questionUserPost__questionName}>
           {questionItem.question}
         </p>
-        <button className={style.questionUserPost__button}>
-          {"+ Follow  •  5"}
-        </button>
+        <div className={style.questionUserPost__buttonAnswerCount}>
+          <button className={style.questionUserPost__button}>
+            {"+ Follow  •  5"}
+          </button>
+          {questionItem.answers.length > 0 && (
+            <>
+              <p className={style.questionUserPost__answerCount}>
+                {questionItem.answers.length + " answers"}
+              </p>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+            </>
+          )}
+        </div>
+
         {questionItem.answers && questionItem.answers[0] && (
           <UserPost
             fullName={answer.firstName}

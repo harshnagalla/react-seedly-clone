@@ -45,6 +45,12 @@
 .questionUserPost__selectedLabel {
   color: rgb(40, 111, 220);
 }
+
+.questionUserPost__buttonAnswerCount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .questionUserPost__button {
   border-radius: 40px;
   background-color: transparent;
@@ -61,4 +67,12 @@
   cursor: pointer;
   outline: none;
   display: inline-block;
+}
+
+.questionUserPost__answerCount {
+  color: rgb(153, 161, 179);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: auto;
 }

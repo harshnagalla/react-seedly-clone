@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 import AppContext from "../../context/index";
 
 const Content = ({ questions, getQuestionsforTopic }) => {
-  const { topics, setTopics } = useContext(AppContext);
+  const { topics } = useContext(AppContext);
 
   return (
     <div className={style.content}>

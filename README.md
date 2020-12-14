@@ -30,4 +30,4 @@ Then start the example app with:
 yarn dev
 ```
 
-The app should now be up and running at http://localhost:3000 🚀
+The app should now be up and running at http://localhost:3000/home 🚀
