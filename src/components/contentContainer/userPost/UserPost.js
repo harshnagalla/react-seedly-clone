@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
@@ -11,14 +10,16 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import style from "./UserPost.module.scss";
+import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
 
-const UserPost = () => {
+const UserPost = ({ fullName, answer, time }) => {
   return (
     <Card className={style.userPost}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={style.userPost__avatar}>
-            R
+            {fullName.charAt(0)}
           </Avatar>
         }
         action={
@@ -26,23 +27,25 @@ const UserPost = () => {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={fullName}
+        subheader={"Answered " + time}
       />
-   
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
+          {answer}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+          <ChatBubbleOutlineIcon />
+          <label>{"0"}</label>
         </IconButton>
         <IconButton aria-label="share">
           <ShareIcon />
+        </IconButton>
+        <IconButton aria-label="add to favorites">
+          <BookmarkBorderIcon />
         </IconButton>
       </CardActions>
     </Card>
