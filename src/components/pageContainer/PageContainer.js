@@ -1,13 +1,13 @@
 import PageHeader from "../pageHeader/PageHeader";
 import ContentContainer from "../contentContainer/ContentContainer";
 
-const PageContainer = () => {
+const PageContainer = ({ topics }) => {
   return (
     <div>
       {/* Header  */}
       <PageHeader />
-      <ContentContainer />
-      {/* <Home/> */}
+      <ContentContainer topics={topics} />
+      {/* <Home/>   */}
     </div>
   );
 };

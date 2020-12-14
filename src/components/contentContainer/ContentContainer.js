@@ -1,9 +1,13 @@
 import Facade from "./facade/Facade";
 import Content from "./Content";
+import React, { useEffect, useState } from "react";
+import style from "./ContentContainer.module.scss";
 
-const ContentContainer = () => {
+export const Context = React.createContext();
+
+const ContentContainer = ({ topics }) => {
   return (
-    <div>
+    <div className={style.contentContainer}>
       <Facade
         headerText={"Let's Talk Finance"}
         secondaryHeaderText={
@@ -11,8 +15,7 @@ const ContentContainer = () => {
         }
         buttonText={"Ask Question"}
       />
-
-      <Content />
+      <Content topics={topics} />
     </div>
   );
 };
