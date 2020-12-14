@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Testing Facade snapshot 1`] = `
+<div>
+  <div
+    class="facade"
+  >
+    <label
+      class="facade__header"
+    >
+      Headers
+    </label>
+    <label
+      class="facade__secondaryHeader"
+    >
+      This is the answer
+    </label>
+    <button
+      class="facade__button"
+    >
+      Add Question
+    </button>
+  </div>
+</div>
+`;
