@@ -5,7 +5,7 @@ const PageContainer = () => {
   return (
     <div>
       <PageHeader />
-      <ContentContainer topics={topics} />
+      <ContentContainer />
     </div>
   );
 };
