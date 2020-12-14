@@ -10,6 +10,7 @@ const ContentContainer = () => {
     topicId: 0,
     topicName: "Let's Talk Finance",
   });
+  
   const [questions, setQuestions] = useState([]);
 
   useEffect(async () => {

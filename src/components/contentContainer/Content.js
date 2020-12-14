@@ -8,8 +8,6 @@ import AppContext from "../../context/index";
 const Content = ({ questions, getQuestionsforTopic }) => {
   const { topics, setTopics } = useContext(AppContext);
 
-  console.log(topics);
-
   return (
     <div className={style.content}>
       <Grid container spacing={3}>

@@ -18,7 +18,7 @@ export default function Home({ topic }) {
       </Head>
       <AppContext.Provider value={context}>
         <PageContainer/>
-      </AppContext.Provider>{" "}
+      </AppContext.Provider>
     </>
   );
 }
