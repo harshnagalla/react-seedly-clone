@@ -1,20 +1,7 @@
 .content {
-  background-color: rgb(244, 245, 246);
-  width: 70%;
-}
-
-.content__allContentTile {
-  border-radius: 4px;
-  padding: 8px;
-  background-color: rgb(255, 255, 255);
-  height: 100%;
-  width: 100%;
-  border: unset;
-  background-image: none;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  height: 53px;
+  display: flex;
+  margin: 10px auto;
+  width: 1080px;
 }
 
 .content_myTopicsTitle {
