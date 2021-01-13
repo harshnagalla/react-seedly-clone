@@ -1,4 +1,4 @@
-# Seedly frontend assignment
+# Seedly frontend clone
 
 ## Prerequisites
 
